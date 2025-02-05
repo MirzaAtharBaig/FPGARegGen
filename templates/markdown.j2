@@ -1,0 +1,12 @@
+# {{ module }} Register Map
+
+## Registers
+{% for reg in registers %}
+### {{ reg.name }} (0x{{ reg.offset[2:].zfill(8) }})
+**Access**: {{ reg.access }}
+
+| Field        | Bits  | Default | Description          |
+|--------------|-------|---------|----------------------|
+{% for field in reg.fields %}| {{ field.name.ljust(12) }} | {{ field.bits.ljust(5) }} | 0x{{ "%02x" % field.default }} | {{ field.description }} |
+{% endfor %}
+{% endfor %}
