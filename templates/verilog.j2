@@ -1,0 +1,11 @@
+`timescale 1ns / 1ps
+
+module {{ module }}_regs();
+{% for reg in registers %}
+// {{ reg.name }} @ {{ reg.offset }} ({{ reg.access }})
+    parameter [31:0] {{ reg.name }}_ADDR = 32'h{{ reg.offset[2:].zfill(8) }};{% for field in reg.fields %}
+    parameter [31:0] {{ reg.name }}_{{ field.name }}_MASK = 32'h{{ "%08x" % field.mask }};
+    parameter [31:0] {{ reg.name }}_{{ field.name }}_POS = {{ field.shift }};{% endfor %}
+
+{% endfor %}
+endmodule
