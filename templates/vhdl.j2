@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+package {{ module }}_regs is
+{% for reg in registers %}
+-- {{ reg.name }} @ {{ reg.offset }} ({{ reg.access }})
+    constant {{ reg.name }}_ADDR : std_logic_vector(31 downto 0) := x"{{ reg.offset[2:].zfill(8) }}";
+{% for field in reg.fields %}
+    constant {{ reg.name }}_{{ field.name }}_MASK : std_logic_vector(31 downto 0) := x"{{ "%08x" % field.mask }}";
+    constant {{ reg.name }}_{{ field.name }}_POS   : natural := {{ field.shift }};{% endfor %}
+
+{% endfor %}
+end package;
