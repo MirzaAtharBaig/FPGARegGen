@@ -1,0 +1,13 @@
+#ifndef {{ module.upper() }}_REGS_H
+#define {{ module.upper() }}_REGS_H
+
+#define {{ module.upper() }}_BASE_ADDR 0x00000000
+
+{% for reg in registers %}
+// {{ reg.name }} ({{ reg.offset }}, {{ reg.access }})
+#define {{ reg.name }}_ADDR ({{ module.upper() }}_BASE_ADDR + {{ reg.offset }}){% for field in reg.fields %}
+#define {{ reg.name }}_{{ field.name }}_MASK (0x{{ "%08x" % field.mask }})
+#define {{ reg.name }}_{{ field.name }}_SHIFT ({{ field.shift }}){% endfor %}
+
+{% endfor %}
+#endif // {{ module.upper() }}_REGS_H
