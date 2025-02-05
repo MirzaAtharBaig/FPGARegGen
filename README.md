@@ -27,17 +27,29 @@ From a single YAML source of truth!
 - **Documentation First** - Auto-generated markdown with field descriptions
 - **FPGA/ASIC Agnostic** - Works with any HDL workflow
 
+## 📂 Project Structure
+
+```
+regforge/
+├── __init__.py
+├── cli.py
+├── models.py
+├── parser.py
+├── generator.py
+└── templates/
+    ├── vhdl.j2
+    ├── verilog.j2
+    ├── c_header.j2
+    └── markdown.j2
+```
+
 ## 📦 Installation
 
 1. Clone repository:
 ```bash
 git clone https://github.com/yourusername/FPGARegGen.git
 cd FPGARegGen
-```
-
-2. Install requirements:
-```bash
-pip install -r requirements.txt
+pip install .
 ```
 
 **Requirements:**
