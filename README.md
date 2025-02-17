@@ -1,4 +1,4 @@
-# FPGARegGen 🔥🧱
+# FPGARegGen
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,7 +7,7 @@
 
 ![FPGARegGen Workflow](https://raw.githubusercontent.com/yourusername/FPGARegGen/main/docs/workflow.png)
 
-## 🚀 Why FPGARegGen?
+## Why FPGARegGen?
 
 Modern FPGA development requires perfect synchronization between hardware registers and software interfaces. FPGARegGen eliminates manual coding errors by automatically generating:
 
@@ -18,7 +18,7 @@ Modern FPGA development requires perfect synchronization between hardware regist
 
 From a single YAML source of truth!
 
-## ✨ Features
+## Features
 
 - **Declarative YAML Specification** - Define registers and fields in human-readable format
 - **Multi-Format Output** - Generate VHDL, Verilog, C, and Markdown simultaneously
@@ -27,7 +27,7 @@ From a single YAML source of truth!
 - **Documentation First** - Auto-generated markdown with field descriptions
 - **FPGA/ASIC Agnostic** - Works with any HDL workflow
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 regforge/
@@ -43,7 +43,7 @@ regforge/
     └── markdown.j2
 ```
 
-## 📦 Installation
+## Installation
 
 1. Clone repository:
 ```bash
@@ -57,7 +57,7 @@ pip install .
 - PyYAML
 - Jinja2
 
-## 🛠 Usage
+## Usage
 
 1. Create register specification (`registers.yaml`):
 ```yaml
@@ -83,7 +83,7 @@ registers:
 python FPGARegGen.py registers.yaml -o generated/
 ```
 
-## 📂 Output Structure
+## Output Structure
 ```
 generated/
 ├── PWM_CONTROLLER_regs.vhd      # VHDL package
@@ -92,7 +92,7 @@ generated/
 └── PWM_CONTROLLER_regs.md       # Documentation
 ```
 
-## 🎯 Key Generated Artifacts
+## Key Generated Artifacts
 | File Type          | Contains                                  | Use Case                |
 |---------------------|-------------------------------------------|-------------------------|
 | `.vhd`/`.v`        | Register addresses, masks, access types  | FPGA Implementation     |
@@ -100,7 +100,7 @@ generated/
 | `.md`              | Register field descriptions              | Design Documentation    |
 
 
-## 🤝 Contributing
+## Contributing
 Contributions welcome! Please follow our guidelines:
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -108,10 +108,10 @@ Contributions welcome! Please follow our guidelines:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📜 License
+## License
 Distributed under MIT License. See `LICENSE` for more information.
 
-## 📬 Contact
+## Contact
 Maintainer: [Mirza Athar Baig](https://www.linkedin.com/in/mirza-athar-baig/)
 
 Project Link: [https://github.com/yourusername/FPGARegGen](https://github.com/yourusername/FPGARegGen)
